@@ -18,7 +18,7 @@ ExternalProject_Add(
     INSTALL_COMMAND ""
 )
 ExternalProject_Get_property(nlohmann_json SOURCE_DIR)
-include_directories(SOURCE_DIR)
+set(JSON_INCLUDE_DIR ${SOURCE_DIR})
 
 ExternalProject_Add(
     pcg
@@ -30,7 +30,7 @@ ExternalProject_Add(
     INSTALL_COMMAND ""
 )
 ExternalProject_Get_property(pcg SOURCE_DIR)
-include_directories(${SOURCE_DIR}/include)
+set(PCG_INCLUDE_DIR ${SOURCE_DIR}/include)
 
 # Protobuf
 include_directories(${Protobuf_INCLUDE_DIRS})
@@ -42,6 +42,7 @@ file(GLOB_RECURSE sources src/crypto/*.c src/crypto/*.h src/*.cpp src/*.h)
 add_library(BinanceChain ${sources} ${PROTO_SRCS} ${PROTO_HDRS})
 
 target_link_libraries(BinanceChain PRIVATE protobuf Boost::boost)
+add_dependencies(BinanceChain nlohmann_json pcg)
 
 # Define headers for this library. PUBLIC headers are used for compiling the
 # library, and will be added to consumers' build paths.
@@ -51,6 +52,8 @@ target_include_directories(BinanceChain
         $<INSTALL_INTERFACE:include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${JSON_INCLUDE_DIR}
+        ${PCG_INCLUDE_DIR}
 )
 
 add_subdirectory(tests)
