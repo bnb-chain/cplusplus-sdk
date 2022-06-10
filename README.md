@@ -1,13 +1,13 @@
 # Binance Chain C++ SDK
 
-This is a C++ library for interacting with the [Binance Chain](https://binance-chain.github.io/api-reference/dex-api/paths.html). It includes the following core components:
+This is a C++ library for interacting with the [Binance Chain](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths). It includes the following core components:
 
-* **[crypto](https://github.com/binance-chain/cplusplus-sdk/tree/master/src/crypto)** - core cryptographic functions.
-* **[Signer](https://github.com/binance-chain/cplusplus-sdk/blob/master/src/Signer.cpp)** - management of accounts, including seed and encrypted mnemonic generation.
+* **[crypto](https://github.com/bnb-chain/cplusplus-sdk/tree/master/src/crypto)** - core cryptographic functions.
+* **[Signer](https://github.com/bnb-chain/cplusplus-sdk/blob/master/src/Signer.cpp)** - management of accounts, including seed and encrypted mnemonic generation.
 
 # API
 
-For examples, please check the [wiki](https://github.com/binance-chain/cplusplus-sdk/wiki).
+For examples, please check the [wiki](https://github.com/bnb-chain/cplusplus-sdk/wiki).
 
 # Testing
 
