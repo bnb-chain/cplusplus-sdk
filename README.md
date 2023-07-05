@@ -1,4 +1,5 @@
-# Binance Chain C++ SDK
+**This repo is out of maintenance and decommissioned.**
+# BNB Chain C++ SDK
 
 This is a C++ library for interacting with the [BNB Chain](https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths). It includes the following core components:
 
